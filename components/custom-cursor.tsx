@@ -37,24 +37,26 @@ export function CustomCursor() {
     <>
       {/* Main cursor */}
       <motion.div
-        className="fixed top-0 left-0 w-4 h-4 bg-white rounded-full pointer-events-none z-50 mix-blend-difference"
+        className="fixed top-0 left-0 w-4 h-4 bg-white rounded-full pointer-events-none mix-blend-difference"
+        style={{ zIndex: 9999 }}
         animate={{
           x: mousePosition.x - 8,
           y: mousePosition.y - 8,
           scale: isHovering ? 1.5 : 1,
         }}
-        transition={{ type: "spring", damping: 10, stiffness: 300, mass: 0.5 }} // Faster follow speed
+        transition={{ type: "spring", damping: 10, stiffness: 300, mass: 0.5 }}
       />
 
       {/* Trailing cursor */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border border-white rounded-full pointer-events-none z-40 mix-blend-difference"
+        className="fixed top-0 left-0 w-8 h-8 border border-white rounded-full pointer-events-none mix-blend-difference"
+        style={{ zIndex: 9998 }}
         animate={{
           x: mousePosition.x - 16,
           y: mousePosition.y - 16,
           scale: isHovering ? 2 : 1,
         }}
-        transition={{ type: "spring", damping: 15, stiffness: 150, mass: 0.6 }} // Faster follow with slight lag
+        transition={{ type: "spring", damping: 15, stiffness: 150, mass: 0.6 }}
       />
     </>
   )

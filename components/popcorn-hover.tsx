@@ -5,7 +5,7 @@ import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-// Extended project list with more images
+// Extended project list with all projects including new ones
 const projects = [
   {
     id: 1,
@@ -72,6 +72,96 @@ const projects = [
     title: "Lunox Design",
     image: "/projects/lunox-2.png",
     zone: "bottom-right",
+  },
+  {
+    id: 12,
+    title: "Desai Builders",
+    image: "/projects/desai-1.png",
+    zone: "top",
+  },
+  {
+    id: 13,
+    title: "Desai Portfolio",
+    image: "/projects/desai-2.png",
+    zone: "middle",
+  },
+  {
+    id: 14,
+    title: "Desai Services",
+    image: "/projects/desai-3.png",
+    zone: "bottom",
+  },
+  {
+    id: 15,
+    title: "AyurSoothe",
+    image: "/projects/ayur-1.png",
+    zone: "top-right",
+  },
+  {
+    id: 16,
+    title: "AyurSoothe Therapies",
+    image: "/projects/ayur-2.png",
+    zone: "middle-right",
+  },
+  {
+    id: 17,
+    title: "AyurSoothe Booking",
+    image: "/projects/ayur-3.png",
+    zone: "bottom-right",
+  },
+  {
+    id: 18,
+    title: "DreamFrame AI",
+    image: "/projects/dream-1.png",
+    zone: "top",
+  },
+  {
+    id: 19,
+    title: "DreamFrame Gallery",
+    image: "/projects/dream-2.png",
+    zone: "middle",
+  },
+  {
+    id: 20,
+    title: "DreamFrame Styles",
+    image: "/projects/dream-3.png",
+    zone: "bottom",
+  },
+  {
+    id: 21,
+    title: "BookTracker",
+    image: "/projects/book-1.png",
+    zone: "top-right",
+  },
+  {
+    id: 22,
+    title: "BookTracker Library",
+    image: "/projects/book-2.png",
+    zone: "middle-right",
+  },
+  {
+    id: 23,
+    title: "BookTracker Progress",
+    image: "/projects/book-3.png",
+    zone: "bottom-right",
+  },
+  {
+    id: 24,
+    title: "TaskFlow Pro",
+    image: "/projects/task-1.png",
+    zone: "top",
+  },
+  {
+    id: 25,
+    title: "TaskFlow Dashboard",
+    image: "/projects/task-2.png",
+    zone: "middle",
+  },
+  {
+    id: 26,
+    title: "TaskFlow Analytics",
+    image: "/projects/task-3.png",
+    zone: "bottom",
   },
 ]
 

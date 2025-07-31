@@ -5,10 +5,10 @@ import { EnhancedPreloader } from "@/components/enhanced-preloader"
 import { CustomCursor } from "@/components/custom-cursor"
 import { EnhancedHeroSection } from "@/components/enhanced-hero-section"
 import { EnhancedAboutSection } from "@/components/enhanced-about-section"
-import { SkillsSection } from "@/components/skills-section"
-import { CertificationsSection } from "@/components/certifications-section"
+import { EnhancedSkillsSection } from "@/components/enhanced-skills-section"
+import { EnhancedCertificationsSection } from "@/components/enhanced-certifications-section"
 import { EnhancedProjectsGrid } from "@/components/enhanced-projects-grid"
-import { ExperienceSection } from "@/components/experience-section"
+import { EnhancedInternshipSection } from "@/components/enhanced-internship-section"
 import { EnhancedContactSection } from "@/components/enhanced-contact-section"
 import { Footer } from "@/components/footer"
 import { FloatingNav } from "@/components/floating-nav"
@@ -60,10 +60,10 @@ export default function Home() {
           <FloatingNav />
           <EnhancedHeroSection />
           <EnhancedAboutSection />
-          <SkillsSection />
-          <CertificationsSection />
+          <EnhancedSkillsSection />
+          <EnhancedCertificationsSection />
           <EnhancedProjectsGrid />
-          <ExperienceSection />
+          <EnhancedInternshipSection />
           <EnhancedContactSection />
           <Footer />
         </>

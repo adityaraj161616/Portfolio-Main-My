@@ -691,7 +691,7 @@ export function EnhancedInternshipSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 1 }}
         >
-          <div className="inline-flex items-center gap-8 px-8 py-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 px-4 py-4 sm:px-8 sm:py-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl mx-auto max-w-fit">
             <div className="text-center">
               <motion.div
                 className="text-3xl font-bold text-white"

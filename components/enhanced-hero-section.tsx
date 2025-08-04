@@ -4,10 +4,12 @@ import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
 import { PopcornHover } from "./popcorn-hover"
 import Link from "next/link"
+import { useMobile } from "@/hooks/use-mobile" // Import useMobile hook
 
 export function EnhancedHeroSection() {
   const [isNameHovered, setIsNameHovered] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const isMobile = useMobile() // Use the hook to detect mobile
 
   useEffect(() => {
     if (videoRef.current) {
@@ -182,76 +184,70 @@ export function EnhancedHeroSection() {
               </motion.div>
             </div>
 
-            {/* Enhanced Action Buttons */}
+            {/* Enhanced Action Buttons with Right-to-Left Fill */}
             <motion.div
               className="flex flex-wrap gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
             >
-              {/* View Work Button */}
               <Link href="#projects">
-                <button
-                  className="group relative px-8 py-3 bg-black text-white font-semibold rounded-full overflow-hidden border border-white/30"
+                <motion.button
+                  className="group/work relative px-8 py-3 bg-white text-black font-semibold rounded-full overflow-hidden border border-white"
                   data-cursor-hover
-                  tabIndex={0}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  {/* Animated white background */}
-                  <span
-                    className="absolute inset-0 bg-white z-0 transition-transform duration-300 ease-out group-hover:translate-x-0 translate-x-[-100%]"
-                    aria-hidden="true"
-                    style={{ transitionProperty: "transform" }}
-                  />
-                  <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
+                  {/* Right to left fill animation */}
+                  <div className="absolute inset-0 bg-black transform translate-x-full group-hover/work:translate-x-0 transition-transform duration-300 ease-out"></div>
+                  <span className="relative z-10 text-black group-hover/work:text-white transition-colors duration-300">
                     View Work
                   </span>
-                </button>
+                </motion.button>
               </Link>
 
-              {/* Contact Button */}
               <Link href="#contact">
-                <button
-                  className="group relative px-8 py-3 bg-white text-black font-semibold rounded-full overflow-hidden border border-white/30"
+                <motion.button
+                  className="group/contact relative px-8 py-3 border border-white/30 text-white font-semibold rounded-full overflow-hidden"
                   data-cursor-hover
-                  tabIndex={0}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  {/* Animated black background */}
-                  <span
-                    className="absolute inset-0 bg-black z-0 transition-transform duration-300 ease-out group-hover:translate-x-0 translate-x-[-100%]"
-                    aria-hidden="true"
-                    style={{ transitionProperty: "transform" }}
-                  />
-                  <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                  {/* Right to left fill animation */}
+                  <div className="absolute inset-0 bg-white transform translate-x-full group-hover/contact:translate-x-0 transition-transform duration-300 ease-out"></div>
+                  <span className="relative z-10 text-white group-hover/contact:text-black transition-colors duration-300">
                     Contact
                   </span>
-                </button>
+                </motion.button>
               </Link>
             </motion.div>
           </motion.div>
 
-          {/* Right side - Enhanced Popcorn hover effect */}
-          <div className="relative h-96 lg:h-[500px] pointer-events-auto">
-            <PopcornHover isHovered={isNameHovered} />
+          {/* Right side - Enhanced Popcorn hover effect (conditionally rendered) */}
+          {!isMobile && ( // Only render PopcornHover on non-mobile devices
+            <div className="relative h-96 lg:h-[500px] pointer-events-auto">
+              <PopcornHover isHovered={isNameHovered} />
 
-            {/* Ambient Light Effect */}
-            <motion.div
-              className="absolute inset-0 pointer-events-none"
-              animate={{
-                background: [
-                  "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05), transparent 60%)",
-                  "radial-gradient(circle at 70% 70%, rgba(255,255,255,0.05), transparent 60%)",
-                  "radial-gradient(circle at 30% 70%, rgba(255,255,255,0.05), transparent 60%)",
-                  "radial-gradient(circle at 70% 30%, rgba(255,255,255,0.05), transparent 60%)",
-                  "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05), transparent 60%)",
-                ],
-              }}
-              transition={{
-                duration: 15,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
-              }}
-            />
-          </div>
+              {/* Ambient Light Effect */}
+              <motion.div
+                className="absolute inset-0 pointer-events-none"
+                animate={{
+                  background: [
+                    "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05), transparent 60%)",
+                    "radial-gradient(circle at 70% 70%, rgba(255,255,255,0.05), transparent 60%)",
+                    "radial-gradient(circle at 30% 70%, rgba(255,255,255,0.05), transparent 60%)",
+                    "radial-gradient(circle at 70% 30%, rgba(255,255,255,0.05), transparent 60%)",
+                    "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05), transparent 60%)",
+                  ],
+                }}
+                transition={{
+                  duration: 15,
+                  repeat: Number.POSITIVE_INFINITY,
+                  ease: "easeInOut",
+                }}
+              />
+            </div>
+          )}
         </div>
       </div>
 

@@ -33,7 +33,7 @@ export function EnhancedAboutSection() {
   }
 
   const stats = [
-    { label: "Projects Completed", value: "5+", icon: Award },
+    { label: "Projects Completed", value: "15+", icon: Award },
     { label: "Technologies Mastered", value: "12+", icon: Calendar },
     { label: "Years of Learning", value: "3+", icon: MapPin },
   ]
